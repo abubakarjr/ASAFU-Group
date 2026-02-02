@@ -66,78 +66,480 @@ nav {
   transition: 0.5s;
 }
 
-/* Hero Section */
+/* Hero Section - Modern Left-Aligned Glass */
 .hero {
-  background: url("../images/work-in-progress.jpg") no-repeat center
-    center/cover;
+  /* Darker gradient overlay to make text pop without a heavy box */
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+    url("../images/staff1.jpg") no-repeat center center/cover;
+
+  /* Full viewport height for impact */
+  min-height: 85vh;
+  display: flex;
+  align-items: center; /* Vertically center */
+  justify-content: flex-start; /* Aligns content to the LEFT */
+  padding: 0;
+  position: relative;
+}
+
+/* The Glass Content Box */
+.hero-content {
+  background: rgba(255, 255, 255, 0.1); /* Very subtle white tint */
+  backdrop-filter: blur(10px); /* Heavy blur for frosted glass */
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 50px;
+  max-width: 650px; /* Limits width so it doesn't span full screen */
+  border-radius: 0 15px 15px 0; /* Rounded corners only on the right side */
+
+  /* The "ASAFU Style" Orange Accent Bar */
+  border-left: 8px solid #f58a35;
+
+  text-align: left; /* Left align text */
   color: #ffffff;
-  padding: 150px 20px 100px 20px;
-  text-align: center;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Simple Slide-in Animation */
+  animation: slideInLeft 1s ease-out;
 }
 
-.hero h2 {
-  font-size: 2.5em;
+/* Small Subtitle (e.g. "Welcome to ASAFU") */
+.hero-subtitle {
+  display: block;
+  color: #f58a35; /* Orange */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   margin-bottom: 10px;
-  color: #175640; /* Dark Green title */
+  font-size: 0.9em;
 }
 
-.hero p {
+/* Main Heading */
+.hero h1 {
+  font-size: 3.5em; /* Large and authoritative */
+  line-height: 1.1;
   margin-bottom: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
+/* Paragraph Text */
+.hero p {
+  margin-bottom: 30px;
+  font-size: 1.15em;
+  line-height: 1.6;
+  color: #f0f0f0; /* Slightly off-white */
+  max-width: 90%;
+}
+
+/* Button Styling */
 .btn {
   display: inline-block;
-  background: #f58a35; /* Orange button */
+  background: #f58a35;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 15px 35px;
   text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid #f58a35;
 }
 
 .btn:hover {
-  background: #175640; /* Dark Green hover */
+  background: transparent;
+  color: #f58a35;
+  border: 2px solid #f58a35;
+}
+
+/* Animation Keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================
+   RESPONSIVE ADJUSTMENTS
+   ============================ */
+
+/* Mobile & Tablet (Max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto; /* Remove fixed height */
+    padding: 100px 0; /* Add vertical padding */
+    justify-content: center; /* Center content on mobile */
+  }
+
+  .hero-content {
+    max-width: 90%; /* Use almost full width */
+    margin: 0 auto; /* Center horizontally */
+    border-radius: 15px; /* Round all corners on mobile */
+    border-left: 5px solid #f58a35; /* Thinner accent bar */
+    padding: 30px;
+    text-align: center; /* Center text for mobile readability */
+  }
+
+  .hero h1 {
+    font-size: 2.2em; /* Smaller heading */
+  }
+
+  .hero p {
+    font-size: 1em;
+    max-width: 100%;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8em;
+  }
 }
 
 /* Services */
+/* Services Section */
 .services {
-  padding: 50px 20px;
+  padding: 60px 0;
+  background: #f4f4f4;
   text-align: center;
-  background: #ffffff;
+  overflow: hidden; /* Prevents scrollbars on the body */
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+.services h2 {
+  margin-bottom: 40px;
+  color: #175640;
+  font-size: 2.5em;
+}
+
+/* The Window */
+.service-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The Moving Track */
+.service-track {
+  display: flex;
+  width: max-content; /* Track width adjusts to content */
   gap: 20px;
-  margin-top: 20px;
+  animation: scroll-infinite 30s linear infinite; /* 30s speed */
 }
 
+/* Pause on Hover (So users can read/click) */
+.service-track:hover {
+  animation-play-state: paused;
+}
+
+/* Card Styling */
 .service-card {
-  background: #175640; /* Dark Green card */
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 450px; /* Taller height as requested */
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Prevents cards from shrinking */
+
+  /* PC DEFAULT: 3 cards view */
+  /* 28vw + gaps roughly equals 3 cards across the screen */
+  width: 28vw;
+  max-width: 400px; /* Cap width for very large screens */
 }
 
 .service-card:hover {
-  background: #f58a35; /* Orange hover */
+  transform: translateY(-5px);
   transition: 0.3s;
 }
 
-/* About Preview */
-.about-preview {
-  padding: 50px 20px;
-  text-align: center;
-  color: #1c1c1c; /* Dark Gray */
+/* Card Image */
+.card-image {
+  height: 60%;
+  width: 100%;
+  background: #ddd;
 }
 
-/* Footer */
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+  height: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #175640;
+  color: white;
+}
+
+.card-content h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #f58a35;
+}
+
+.card-content p {
+  font-size: 0.95em;
+}
+
+/* Animation Keyframes */
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves left by 50% (the length of one full set) */
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+/* About Preview */
+/* About Preview Section */
+.about-preview {
+  padding: 100px 0;
+  background: #ffffff; /* White background for contrast against the Grey Services */
+  overflow: hidden; /* Prevents decorative elements from spilling out */
+}
+
+/* Flex Wrapper for Side-by-Side Layout */
+.about-wrapper {
+  display: flex;
+  align-items: center; /* Vertically centers the text with the image */
+  justify-content: space-between;
+  gap: 60px; /* Space between text and image */
+}
+
+/* Left Column: Text Styling */
+.about-text {
+  flex: 1; /* Takes up 50% width */
+  text-align: left; /* Reset to left alignment for modern look */
+}
+
+.sub-heading {
+  color: #f58a35; /* Orange Accent */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.about-text h2 {
+  font-size: 2.5em;
+  color: #175640; /* Dark Green */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.about-text p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+/* Right Column: Image Styling */
+.about-image {
+  flex: 1; /* Takes up 50% width */
+  position: relative; /* Needed for the decorative box positioning */
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2; /* Sits on top of the accent box */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft deep shadow */
+}
+
+/* Decorative Orange Box behind the image */
+.img-accent {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #f58a35; /* Orange Border */
+  border-radius: 10px;
+  z-index: 1; /* Sits behind the image */
+}
+
+/* ============================
+   RESPONSIVE ADJUSTMENTS
+   ============================ */
+
+/* Tablet & Mobile (Max-width: 900px) */
+@media (max-width: 900px) {
+  .about-wrapper {
+    flex-direction: column; /* Stack vertically */
+    text-align: center; /* Center text on mobile */
+  }
+
+  .about-text {
+    order: 2; /* Put text below image on mobile */
+    text-align: center;
+  }
+
+  .about-image {
+    order: 1; /* Image on top */
+    width: 90%; /* Limit width slightly */
+    margin-bottom: 40px;
+  }
+
+  /* Remove offset accent on mobile if it causes scroll issues, 
+     or just adjust it */
+  .img-accent {
+    top: 15px;
+    right: -15px;
+  }
+}
+
+/* Footer Section */
 footer {
-  background: #175640; /* Dark Green */
+  background: #103c2d; /* Slightly darker than brand Green for depth */
+  color: #d3d3d3; /* Light grey text is easier to read than pure white */
+  padding: 70px 0 20px 0;
+  margin-top: 50px;
+  font-size: 0.95em;
+}
+
+/* Grid Layout for Desktop */
+.footer-content {
+  display: grid;
+  /* Creates 4 equal columns that auto-stack on smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+  text-align: left; /* Default alignment */
+}
+
+/* Footer Column Styling */
+.footer-col h4 {
+  color: #f58a35; /* ASAFU Orange */
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Add a small underline to headings */
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background: #f58a35;
+}
+
+.footer-col p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Logo in Footer */
+.footer-logo {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 2px solid #f58a35;
+}
+
+/* Footer Links */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #d3d3d3;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: #f58a35; /* Orange on hover */
+  transform: translateX(5px); /* Tiny slide effect */
+}
+
+/* Contact Info Specifics */
+.contact-info li {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.contact-info strong {
+  color: #ffffff; /* Make labels bright white */
+}
+
+/* Social Links */
+.social-links a {
+  display: inline-block;
+  margin-right: 15px;
   color: #ffffff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle box */
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.social-links a:hover {
+  background: #f58a35;
+  color: #fff;
+}
+
+/* Divider Line */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+/* ============================
+   RESPONSIVE (Mobile)
+   ============================ */
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: center; /* Center align everything on mobile */
+    gap: 50px;
+  }
+
+  /* Center the orange underline on headings */
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
 
 /* ============================
@@ -246,5 +648,25 @@ footer {
 
   .hero {
     padding: 100px 15px 50px 15px;
+  }
+}
+
+/* ============================
+   RESPONSIVE (Mobile)
+   ============================ */
+@media (max-width: 768px) {
+  .service-track {
+    animation-duration: 20s; /* Faster scroll on mobile */
+  }
+
+  .service-card {
+    /* Mobile: 1 card view */
+    width: 90vw; /* Takes up 90% of screen width */
+    height: 400px; /* Slightly shorter for mobile */
+    margin-right: 10px; /* Ensure spacing remains consistent */
+  }
+
+  .services h2 {
+    font-size: 2em;
   }
 }
