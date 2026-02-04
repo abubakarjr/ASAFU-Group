@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Under Construction - ASAFU Group</title>
+    <title>Our Services - ASAFU Group</title>
     <link rel="icon" href="/images/ASAFU.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="/css/style.css" />
     <link
@@ -14,7 +14,9 @@
   <body>
     <header>
       <div class="container nav-container">
-        <img class="logo" src="/images/ASAFU.jpg" alt="logo" />
+        <a href="index.html" class="logo-link">
+          <img class="logo" src="/images/ASAFU.jpg" alt="logo" />
+        </a>
 
         <div class="hamburger">
           <span class="bar"></span>
@@ -26,7 +28,7 @@
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
             <li><a href="subsidiaries.html">Subsidiaries</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -37,28 +39,188 @@
     </header>
 
     <main>
-      <section class="construction-wrapper">
+      <section class="page-header">
         <div class="container">
-          <div class="construction-content">
-            <div class="icon-container">
-              <i class="fa-solid fa-helmet-safety construction-icon"></i>
-              <i class="fa-solid fa-gear gear-icon"></i>
+          <h1>Our Core Services</h1>
+          <p>Home &gt; Services</p>
+        </div>
+      </section>
+
+      <section class="services-intro">
+        <div class="container">
+          <div class="intro-content">
+            <span class="sub-heading">What We Do</span>
+            <h2>Comprehensive Solutions for Modern Needs</h2>
+            <p>
+              At ASAFU Group, we don't just deliver services; we deliver value.
+              Our multi-disciplinary approach allows us to handle complex
+              projects by integrating expertise from construction, logistics,
+              and agriculture. Here is how we can help you build, grow, and
+              succeed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-list">
+        <div class="container">
+          <div class="service-page-grid">
+            <div class="service-box">
+              <div class="svc-img">
+                <img src="/images/construction.jpg" alt="General Contracting" />
+                <div class="icon-overlay">
+                  <i class="fa-solid fa-trowel-bricks"></i>
+                </div>
+              </div>
+              <div class="svc-text">
+                <h3>General Contracting</h3>
+                <p>
+                  We provide end-to-end construction services for residential,
+                  commercial, and industrial projects. Our team ensures
+                  structural integrity and architectural beauty.
+                </p>
+                <ul class="svc-features">
+                  <li>
+                    <i class="fa-solid fa-check"></i> Building Construction
+                  </li>
+                  <li><i class="fa-solid fa-check"></i> Road & Civil Works</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Renovation & Remodeling
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <h1>Under Construction</h1>
-            <p class="lead-text">
-              We are currently working hard to bring you this page. <br />
-              Please check back soon for updates on our latest services and
-              projects.
-            </p>
+            <div class="service-box">
+              <div class="svc-img">
+                <img src="/images/supply.jpg" alt="General Supply" />
+                <div class="icon-overlay">
+                  <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+              </div>
+              <div class="svc-text">
+                <h3>General Supply</h3>
+                <p>
+                  Our procurement division sources high-quality materials and
+                  equipment for businesses and government agencies, ensuring
+                  timeliness and cost-efficiency.
+                </p>
+                <ul class="svc-features">
+                  <li>
+                    <i class="fa-solid fa-check"></i> Office & School Furniture
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Industrial Machinery
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Safety Equipment (PPE)
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-            <div class="action-buttons">
-              <a href="index.html" class="btn">Back to Home</a>
-              <a href="mailto:info@asafugroup.com" class="btn btn-outline"
-                >Contact Support</a
-              >
+            <div class="service-box">
+              <div class="svc-img">
+                <img src="/images/ASAFU.jpg" alt="Real Estate" />
+                <div class="icon-overlay"><i class="fa-solid fa-city"></i></div>
+              </div>
+              <div class="svc-text">
+                <h3>Real Estate</h3>
+                <p>
+                  We manage, develop, and sell prime properties across Nigeria.
+                  Whether you are looking for a home or an investment, we secure
+                  the best deals.
+                </p>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> Property Management</li>
+                  <li><i class="fa-solid fa-check"></i> Estate Development</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Land Sales & Leasing
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-box">
+              <div class="svc-img">
+                <img src="/images/ASAFU.jpg" alt="Consultancy" />
+                <div class="icon-overlay">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+              </div>
+              <div class="svc-text">
+                <h3>Consultancy Services</h3>
+                <p>
+                  Leveraging our industry experience, we offer professional
+                  advice to help businesses optimize operations, adopt
+                  technology, and scale effectively.
+                </p>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> Business Strategy</li>
+                  <li><i class="fa-solid fa-check"></i> Project Management</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> ICT & Digital Solutions
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-box">
+              <div class="svc-img">
+                <img src="/images/ASAFU.jpg" alt="Agro-Allied" />
+                <div class="icon-overlay">
+                  <i class="fa-solid fa-wheat-awn"></i>
+                </div>
+              </div>
+              <div class="svc-text">
+                <h3>Agro-Allied Services</h3>
+                <p>
+                  Contributing to food security through sustainable farming
+                  practices, livestock management, and the supply of
+                  agricultural inputs.
+                </p>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> Crop Production</li>
+                  <li><i class="fa-solid fa-check"></i> Livestock & Poultry</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Farm Machinery Supply
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-box">
+              <div class="svc-img">
+                <img src="/images/logistics.jpg" alt="Logistics" />
+                <div class="icon-overlay">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+              </div>
+              <div class="svc-text">
+                <h3>Logistics & Haulage</h3>
+                <p>
+                  Moving goods safely and efficiently across the nation. We
+                  provide reliable transportation solutions for heavy-duty
+                  materials and commercial goods.
+                </p>
+                <ul class="svc-features">
+                  <li><i class="fa-solid fa-check"></i> Haulage Services</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Supply Chain Management
+                  </li>
+                  <li><i class="fa-solid fa-check"></i> Warehousing</li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <h2>Ready to start your next project?</h2>
+          <p>Contact us today for a free consultation and quote.</p>
+          <a href="contact.html" class="btn">Get in Touch</a>
         </div>
       </section>
     </main>
@@ -86,8 +248,29 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About Us</a></li>
               <li><a href="projects.html">Our Projects</a></li>
+              <li><a href="subsidiaries.html">Subsidiaries</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <address class="contact-info">
+              <p>
+                <strong>Head Office:</strong><br />Suite 311, Second Floor,
+                Amsco Dazo, No. 8 Murtala Muhammed Road, Kaduna, Nigeria.
+              </p>
+              <p>
+                <strong>Phone:</strong><br /><a href="tel:+2347085849410"
+                  >+234 70 8584 9410</a
+                >
+              </p>
+              <p>
+                <strong>Email:</strong><br /><a
+                  href="mailto:info@asafugroup.com"
+                  >info@asafugroup.com</a
+                >
+              </p>
+            </address>
           </div>
         </div>
         <hr class="footer-divider" />
