@@ -1180,13 +1180,14 @@ footer {
 .team-img {
   height: 350px;
   width: 100%;
-  background: #ddd;
+  background: #fff;
 }
 
 .team-img img {
-  width: 100%;
+  width: 80%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .team-info {
